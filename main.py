@@ -1,3 +1,4 @@
+import logging
 import os
 
 import requests
@@ -12,6 +13,8 @@ bot = telegram.Bot(token=TG_BOT_TOKEN)
 
 # `timestamp` нужно передавть в любом случае.
 params = {"timesamp": None}
+
+logging.warning("Бот запущен")
 
 while True:
     try:
