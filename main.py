@@ -5,7 +5,7 @@ import requests
 import telegram
 from dotenv import load_dotenv
 
-from tg_reviews_bot.logs import TelegramLogHandler
+from logs import TelegramLogHandler
 
 load_dotenv()
 
@@ -15,7 +15,9 @@ TG_BOT_OWNER_CHAT_ID = os.getenv("TG_BOT_OWNER_CHAT_ID")
 
 bot = telegram.Bot(token=TG_BOT_TOKEN)
 
-logging.basicConfig(handlers=[TelegramLogHandler(tg_bot=bot)])
+logging.basicConfig(
+    handlers=[TelegramLogHandler(tg_bot=bot, chat_id=TG_BOT_OWNER_CHAT_ID)]
+)
 
 DVMN_API_TOKEN = os.getenv("DVMN_API_TOKEN")
 

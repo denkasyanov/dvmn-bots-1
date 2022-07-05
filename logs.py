@@ -3,9 +3,9 @@ import os
 
 
 class TelegramLogHandler(logging.Handler):
-    def __init__(self, tg_bot, chat_id=None):
+    def __init__(self, tg_bot, chat_id):
         super().__init__()
-        self.chat_id = chat_id or os.getenv("TG_BOT_OWNER_CHAT_ID")
+        self.chat_id = chat_id
         self.tg_bot = tg_bot
 
     def emit(self, record):
