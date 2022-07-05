@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from logs import TelegramLogHandler
 
 
-if __name__ == "__main__":
+def main():
     load_dotenv()
     DVMN_API_TOKEN = os.getenv("DVMN_API_TOKEN")
     TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN")
@@ -76,3 +76,7 @@ if __name__ == "__main__":
 
         except Exception:
             logging.exception("Бот упал с ошибкой")
+
+
+if __name__ == "__main__":
+    main()
